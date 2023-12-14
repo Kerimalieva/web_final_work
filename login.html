@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management System - Login page</title>
+    <meta name="author" content="Zarina Kerimalieva Com-22A">
+    <link rel="stylesheet" href="login.css" />
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const loginForm = document.querySelector('.form');
+
+        loginForm.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+
+          fetch('https://657707ed197926adf62d1d4c.mockapi.io/users')
+            .then(response => response.json())
+            .then(users => {
+              const user = users.find(
+                u => u.email === email && u.password === password
+              );
+
+              if (user) {
+                let user_id = user.id;
+                localStorage.setItem('user_id', user_id.toString());
+                console.log('User logged in successfully', user);
+                localStorage.setItem('authenticated', 'true');
+                window.location.href = './index.html';
+                
+              } else {
+                console.error('Invalid email or password');
+                alert('Invalid email or password');
+              }
+            })
+            .catch(error => {
+              console.error('Error during login', error);
+              alert('error');
+            });
+        });
+      });
+    </script>
+
+  </head>
+  <body>
+    <div class="row height-full">
+      <div
+        class="left-column flex flex-column height-full justify-center items-center"
+      >
+        <h1 class="welcoming-title" style="color: rgb(170, 15, 209);">Welcome back</h1>
+        <form class="form" autocomplete="off">
+          <label for="email" class="label">Email</label>
+          <input type="email" name="email" id="email" class="input" required />
+
+          <label for="password" class="label">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="input"
+            required
+          />
+
+          <button
+            type="submit"
+            class="button regular-button pink-background cta-btn"
+          >
+            Log in
+          </button>
+        </form>
+        <p class="sign-up-prompt">
+          Don’t have an account?
+          <a href="./signup.html" class="sign-up-link">Sign up</a>
+        </p>
+      </div>
+
+      <div class="right-column"></div>
+    </div>
+  </body>
+</html>

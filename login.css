@@ -1,0 +1,210 @@
+.right-column {
+    display: none;
+  }
+  
+  
+  
+  .welcoming-title {
+    font-weight: 600;
+    font-size: var(--font-size-24);
+  }
+  
+  .form {
+    max-width: 338px;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    margin-top: var(--space-32);
+  }
+  
+  .sign-up-prompt,
+  .login-prompt {
+    font-weight: 500;
+    font-size: var(--font-size-14);
+    margin-top: var(--space-32);
+    text-align: center;
+  }
+  
+  .sign-up-link,
+  .log-in-link {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
+
+  
+  @media (min-width: 768px) {
+    .right-column {
+      display: block;
+      border-left: 2px solid var(--black);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  
+    
+
+    .row {
+      display: flex;
+      height: 100%;
+    }
+  
+    .left-column,
+    .right-column {
+      width: 50%;
+    }
+  }
+
+  
+  .left-column {
+    background: transparent;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px); 
+  }
+    
+    .right-column {
+      
+      height: 100vh; 
+    }
+    
+ 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+form {
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень вокруг формы */
+  border-radius: 10px;
+}
+
+button {
+  border: none;
+  font: inherit;
+  background-color:rgb(83, 9, 147) ;
+  cursor: pointer;
+}
+
+
+:root {
+  --font-family: "Inter", sans-serif;
+  --font-size-24: 24px;
+  --font-size-16: 16px;
+  --font-size-14: 14px;
+
+  --black: #000;
+
+  --white: #fff;
+
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+
+
+  --radius-8: 8px;
+
+  --input-height: 45px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: url('https://wallpaperaccess.com/full/8406708.gif') center center fixed;
+  background-size: cover;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+
+.items-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.height-full {
+  height: 100%;
+}
+
+
+
+
+.button {
+  border: 2px solid var(--black);
+  box-shadow: var(--black-shadow);
+  border-radius: var(--radius-8);
+}
+
+.regular-button {
+  font-weight: 600;
+  padding-inline: var(--space-16);
+  height: var(--input-height);
+}
+
+
+
+
+
+.form {
+  margin-top: var(--space-32);
+}
+
+.label {
+  font-weight: 600;
+  font-size: var(--font-size-16);
+  display: inline-block;
+  margin-top: var(--space-16);
+}
+
+
+
+
+.input,
+.textarea-input,
+.status-select {
+  border: 2px solid var(--black);
+  border-radius: var(--radius-8);
+  width: 100%;
+  padding: var(--space-16);
+  margin-top: var(--space-16);
+}
+
+.input,
+.status-select {
+  height: var(--input-height);
+}
+
+
+
+
